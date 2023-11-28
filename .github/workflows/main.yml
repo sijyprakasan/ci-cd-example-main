@@ -64,6 +64,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"sijyprakasan_PartsUnlimited" /o:"sijyprakasan" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build ./CurrentTimeService.sln --configuration Release --no-restore
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+           .\.sonar\scanner\dotnet-sonarscanner begin /k:"sijyprakasan_ci-cd-example-main" /o:"sijyprakasan" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+           dotnet build ./CurrentTimeService.sln --configuration Release --no-restore
+           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
